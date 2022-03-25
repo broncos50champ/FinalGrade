@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secTextfield: UITextField!
     
     
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,19 @@ class ViewController: UIViewController {
 
     @IBAction func calculateButton(_ sender: Any) {
     
+        var first1 = textField3.text ?? ""
+        var second2 = textField.text ?? ""
+        var first12 = secTextfield.text ?? ""
+        var Desired = Double(first12) ?? 0.0
+        var w100 = Double (first1) ?? 0.0
+        var Current = Double (second2) ?? 0.0
+        
+        var w = w100 / 100.0
+        var g = Desired - (1-w) * Current
+        var f = g / w
+        
+        firstLabel.text="\(f)"
+        
     }
  
     
